@@ -1,0 +1,133 @@
+$sidebar-width: 260px;
+$bg-dark: #0f1420;
+$bg-icon: #2563eb;
+$text-primary: #e5e7eb;
+$text-muted: #8b93a7;
+$accent: #3b82f6;
+$accent-bg: rgba(59, 130, 246, 0.15);
+$danger: #ef4444;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.sidebar {
+  width: $sidebar-width;
+  background: $bg-dark;
+  color: $text-primary;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  min-height: 100vh;
+  padding: 1.25rem 1rem;
+}
+
+.nav-home {
+  padding-bottom: 1.25rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(white, 0.08);
+
+  &-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    // wrap the House icon div in this class in your JSX
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: $bg-icon;
+      flex-shrink: 0;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        color: white;
+      }
+    }
+
+    &-text {
+      div:first-child {
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: white;
+      }
+      div:last-child {
+        font-size: 0.75rem;
+        color: $text-muted;
+      }
+    }
+  }
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 0.9rem;
+    border-radius: 12px;
+    color: $text-muted;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.15s ease, color 0.15s ease;
+    position: relative;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      background: rgba(white, 0.04);
+      color: $text-primary;
+    }
+
+    &.active {
+      background: $accent-bg;
+      color: $accent;
+
+      svg {
+        color: $accent;
+      }
+    }
+
+    .nav-badge {
+      margin-left: auto;
+      background: $danger;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      min-width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 5px;
+    }
+  }
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex: 1;
+  min-width: 0; // prevents content (long text, tables, etc.) from overflowing and pushing the sidebar
+  overflow-y: auto;
+  background: #f5f6fa; // or whatever your main content bg should be
+  padding: 2rem;
+}

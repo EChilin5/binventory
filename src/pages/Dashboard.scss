@@ -1,0 +1,24 @@
+.dashboard {
+  &-header-title {
+    color: #ffffff;
+    padding-top: 10px;
+  }
+
+  &-header-sub-title {
+    color: white;
+    font-weight: 100;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &-top-block {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -0.5rem; // offset the item padding/margin
+    &-item {
+      flex: 0 0 calc(100% / 3);
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+  }
+}

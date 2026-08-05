@@ -1,0 +1,74 @@
+.rct {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #222732;
+
+  &-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; // icon never shrinks
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05); // faint circle bg like the screenshot
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      color: #f87171; // reddish arrow icon
+    }
+  }
+
+  &-mid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1 1 auto; // takes up remaining space, pushes -right to the edge
+    min-width: 0; // lets text truncate/wrap instead of overflowing flex parent
+
+    &-mid-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem; // vertical spacing instead of horizontal
+}
+
+    > div:first-child {
+      font-weight: 600;
+      color: #fff;
+    }
+
+    > div:nth-child(2) {
+      display: flex;
+      // align-items: center;
+      gap: 0.4rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.875rem;
+
+      span:first-child {
+        color: #60a5fa; // "Product Sold" blue
+      }
+
+      // add middot separators between spans
+      // span:not(:last-child)::after {
+      //   content: "·";
+      //   margin-left: 0.4rem;
+      //   color: rgba(255, 255, 255, 0.3);
+      // }
+    }
+
+    > div:last-child {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &-right {
+    flex-shrink: 0;
+    align-self: flex-start; // sits at top like in the screenshot
+    color: #f87171;
+    font-weight: 600;
+  }
+}

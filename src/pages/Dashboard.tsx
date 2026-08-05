@@ -1,6 +1,6 @@
 import React from "react";
 import "./Dashboard.scss";
-import { Package, TriangleAlert, TrendingDown } from "lucide-react";
+import { Package } from "lucide-react";
 import DashboardCard from "../components/DashboardCard";
 import RecentTransactionsCard from "../components/RecentTransactionsCard";
 import RecentUpdates from "../components/RecentUpdates";
@@ -26,18 +26,28 @@ const Dashboard = () => {
       </div>
       <div className="dashboard-top-block">
         <div className="dashboard-top-block-item">
-          {" "}
           <DashboardCard icon={Package} title="Total Products" value="15" />
         </div>
         <div className="dashboard-top-block-item">
-          {" "}
           <DashboardCard icon={Package} title="Total Products" value="15" />
-        </div>{" "}
+        </div>
+        <div className="dashboard-top-block-item">
+          <DashboardCard icon={Package} title="Total Products" value="15" />
+        </div>
+        <div className="dashboard-top-block-item">
+          <DashboardCard icon={Package} title="Total Products" value="15" />
+        </div>
+        <div className="dashboard-top-block-item">
+          <DashboardCard icon={Package} title="Total Products" value="15" />
+        </div>
+        <div className="dashboard-top-block-item">
+          <DashboardCard icon={Package} title="Total Products" value="15" />
+        </div>
       </div>
 
       <div className="dashboard-bottom">
         <div className="dashboard-bottom-left">
-          <div>Recent transactions</div>
+          <div className="dashboard-bottom-left-header">Recent transactions</div>
           <RecentTransactionsCard
             title="Coffee Beans 1kg"
             productsoldtype="Product Sold"

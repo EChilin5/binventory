@@ -21,4 +21,27 @@
       padding: 1rem;
     }
   }
+
+&-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+  gap: 1rem;
+}
+
+&-bottom-left {
+  flex: 1 1 calc(50% - 0.5rem); // half the gap, since there's one gap shared between two items
+  box-sizing: border-box;
+  padding: 1rem;
+
+  &-header{
+    color:white;
+  }
+}
+
+&-bottom-right {
+  flex: 1 1 calc(50% - 0.5rem);
+  box-sizing: border-box;
+  padding: 1rem;
+}
 }
